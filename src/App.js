@@ -1,9 +1,16 @@
-function App() {
+// function App({value}) {
+//   return (
+//     <button className="input">
+//       {value}
+//     </button>
+//   );
+// }
+
+export function Inputs({value, type, placeholder}) {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <input type={type} className="input-auth" placeholder={placeholder} value={value} />
   );
 }
 
-export default App;
+// export default App;
+
