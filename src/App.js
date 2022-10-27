@@ -1,23 +1,8 @@
-// function App({value}) {
-//   return (
-//     <button className="input">
-//       {value}
-//     </button>
-//   );
-// }
+import React from "react";
+import { RoutesBQ } from './RoutesBQ';
 
-export function Inputs({value, type, placeholder}) {
+export const App = () => {
   return (
-    <input type={type} className="input-auth" placeholder={placeholder} value={value} />
+    <RoutesBQ />
   );
 }
-
-export function FooterAuth({text1, text2, href}) {
-  return (
-    <p className="footer-auth">{text1} <a href={href}>{text2}</a></p>
-  );
-}
-
-
-// export default App;
-
