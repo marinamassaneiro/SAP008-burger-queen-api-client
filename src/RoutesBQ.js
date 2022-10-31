@@ -4,8 +4,7 @@ import { Salon } from './pages/salon/salon';
 import { Fragment } from 'react';
 import {
   BrowserRouter,
-  Routes,
-  Route,
+  Routes, Route
 } from 'react-router-dom';
 
 export const RoutesBQ = () => {
