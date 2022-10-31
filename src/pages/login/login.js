@@ -9,11 +9,11 @@ export const Login = () => {
 		<section className='div-auth'>
 			<img className='logo' src={logo} alt='logo'></img>
 			<form>
-				<Inputs type='email' placeholder='E-mail' class /><br />
-				<Inputs type='password' placeholder='Senha' /><br />
+				<Inputs type='email' placeholder='E-MAIL' class /><br />
+				<Inputs type='password' placeholder='SENHA' /><br />
 				<Inputs type='submit' value='ENTRAR' />
 			</form>
-			<FooterAuth text1='Não possui uma conta?' text2='Cadastre-se!' href='#root' />
+			<FooterAuth text1='Não possui uma conta?' text2='Cadastre-se!' href='register' />
 		</section> 
 	);
 };
