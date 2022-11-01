@@ -16,7 +16,9 @@ export const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('');
 
-  const teste = createUser(name, email, password, role)
+  const teste = (e) => {
+    e.preventDefault();
+    createUser(name, email, password, role)
     .then((response) => {
       if (response.status === 200) {
         return response.json();
@@ -27,8 +29,8 @@ export const Register = () => {
       console.log(data.token);
       console.log(data);
     })
-    .catch(() => console.log('deu errado'));
-
+    .catch((erro) => console.log(erro));
+  }
 
     return (
       <section className='div-auth'>
@@ -38,17 +40,17 @@ export const Register = () => {
           <Inputs type='email' onChange={(e) => setEmail(e.target.value)} placeholder='E-MAIL' class /><br />
           <Inputs type='password' onChange={(e) => setPassword(e.target.value)} placeholder='SENHA' /><br />
           <Inputs type='password' onChange={(e) => setConfirmPassword(e.target.value)} placeholder='CONFIRMAR SENHA' /><br />
-          <select className="select-register">
+          <select className="select-register" onChange={(e) => setRole(e.target.value)}  >
             <OptionSelect value='Sua função' />
-            <OptionSelect onChange={(e) => setRole(e.target.value)} value='Atendente' />
-            <OptionSelect onChange={(e) => setRole(e.target.value)} value='Cozinheiro(a)' />
+            <OptionSelect value='Atendente' />
+            <OptionSelect value='Cozinheiro(a)' />
           </select>
-          <Inputs type='submit' value='CADASTRAR' onClick={console.log(teste)} />
+          <Inputs type='submit' value='CADASTRAR' onClick={teste} />
         </form>
         <FooterAuth text1='Já possui uma conta?' text2='Faça login!' href='/login' />
       </section>
     );
-  }
+}
 
 // const user = {
 //   "name": "Sample Name - optional",

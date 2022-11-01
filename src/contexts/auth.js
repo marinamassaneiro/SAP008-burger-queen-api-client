@@ -21,9 +21,10 @@
 // };
 
 export const createUser = (name, email, password, role) => {
-  return fetch('https://lab-api-bq.onrender.com/api-docs/users', {
+  console.log(name, email, password, role);
+  return fetch('https://lab-api-bq.up.onrender.app/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       name: name,
       email: email,
@@ -33,3 +34,10 @@ export const createUser = (name, email, password, role) => {
     }),
   });
 };
+
+// return fetch('https://lab-api-bq.up.onrender.app/products', {
+//     method: 'GET',
+//     headers: { 'Content-Type': 'application/json',
+//       'Authorization': token },
+//     }),
+
