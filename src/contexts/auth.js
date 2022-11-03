@@ -20,9 +20,9 @@
 // return <AuthContext.Provider>{children}</AuthContext.Provider>;
 // };
 
-export const createUser = (name, email, password, role) => {
+export const creatingUser = (name, email, password, role) => {
   console.log(name, email, password, role);
-  return fetch('https://lab-api-bq.up.onrender.app/users', {
+  return fetch('https://lab-api-bq.onrender.com/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
