@@ -9,6 +9,7 @@ import '../../style.css'
 import './register.css'
 import { creatingUser } from '../../contexts/auth'
 import { errorMessage } from "../../errors/error";
+import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
   const [name, setName] = useState('');
@@ -17,23 +18,29 @@ export const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('');
   const error = errorMessage.error;
+  const navigate = useNavigate();
 
   const teste = (e) => {
     e.preventDefault();
-    creatingUser(name, email, password, role)
-    .then((response) => {
-      if (response.status === 200) {
-        return response.json();
-      }
-      const tagErrorMessage = document.querySelector('#error-message');
-      tagErrorMessage.innerHTML = error[0].register[response.status];
-    })
-    .then((data) => {
-      if(!data) return;
-      console.log(data.token);
-      console.log(data);
-    })
-    .catch((erro) => console.log(erro));
+    const tagErrorMessage = document.querySelector('#error-message');
+    if (password !== confirmPassword) {
+      tagErrorMessage.innerHTML = 'As senhas devem combinar'
+    } else {
+      creatingUser(name, email, password, role)
+      .then((response) => {
+        if (response.status === 200) {
+          navigate('/login');
+          return response.json();
+        }
+        tagErrorMessage.innerHTML = error[0].register[response.status];
+      })
+      .then((data) => {
+        if(!data) return;
+        console.log(data.token);
+        console.log(data);
+      })
+      .catch((erro) => console.log(erro));
+    }
   }
 
     return (
