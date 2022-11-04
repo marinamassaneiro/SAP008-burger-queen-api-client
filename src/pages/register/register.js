@@ -8,7 +8,7 @@ import '../login/login.css'
 import '../../style.css'
 import './register.css'
 import { creatingUser } from '../../contexts/auth'
-import { Navigate } from "react-router-dom";
+import { errorMessage } from "../../errors/error";
 
 export const Register = () => {
   const [name, setName] = useState('');
@@ -16,6 +16,7 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('');
+  const error = errorMessage.error;
 
   const teste = (e) => {
     e.preventDefault();
@@ -24,6 +25,8 @@ export const Register = () => {
       if (response.status === 200) {
         return response.json();
       }
+      const tagErrorMessage = document.querySelector('#error-message');
+      tagErrorMessage.innerHTML = error[0].register[response.status];
     })
     .then((data) => {
       if(!data) return;
@@ -46,6 +49,7 @@ export const Register = () => {
             <OptionSelect value='Atendente' />
             <OptionSelect value='Cozinheiro(a)' />
           </select>
+          <p id='error-message'></p>
           <Inputs type='submit' value='CADASTRAR' onClick={teste} />
         </form>
         <FooterAuth text1='Já possui uma conta?' text2='Faça login!' href='/login' />
