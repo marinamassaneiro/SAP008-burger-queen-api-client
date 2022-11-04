@@ -7,7 +7,8 @@ import logo from '../../assets/logo.svg';
 import '../login/login.css'
 import '../../style.css'
 import './register.css'
-import { createUser } from '../../contexts/auth'
+import { creatingUser } from '../../contexts/auth'
+import { Navigate } from "react-router-dom";
 
 export const Register = () => {
   const [name, setName] = useState('');
@@ -18,7 +19,7 @@ export const Register = () => {
 
   const teste = (e) => {
     e.preventDefault();
-    createUser(name, email, password, role)
+    creatingUser(name, email, password, role)
     .then((response) => {
       if (response.status === 200) {
         return response.json();
