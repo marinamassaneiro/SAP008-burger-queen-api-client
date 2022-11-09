@@ -20,8 +20,7 @@
 // return <AuthContext.Provider>{children}</AuthContext.Provider>;
 // };
 
-export const creatingUser = (name, email, password, role) => {
-  console.log(name, email, password, role);
+export const createUser = (name, email, password, role) => {
   return fetch('https://lab-api-bq.onrender.com/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -33,6 +32,27 @@ export const creatingUser = (name, email, password, role) => {
       restaurant: 'Burguer Queen',
     }),
   });
+};
+
+export const createToken = (email, password) => {
+  console.log(email, password);
+  return fetch('https://lab-api-bq.onrender.com/auth', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+  });
+};
+
+export const allUsers = () => {
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVAdS5jb20iLCJpZCI6MjIsImlhdCI6MTY2NzkzNzY1MSwiZXhwIjoxNjk5NDk1MjUxfQ.hbl2v-R3ofyvWfBklYfaF7qsdXGUjKWSKLGs_xvvxhY"
+  return fetch('https://lab-api-bq.onrender.com/users', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json', 
+    'Authorization': token },
+  })
 };
 
 // return fetch('https://lab-api-bq.up.onrender.app/products', {
