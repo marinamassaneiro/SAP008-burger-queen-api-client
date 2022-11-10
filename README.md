@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <img alt="Logo Burguer Queen" src="https://github.com/marinamassaneiro/SAP008-burger-queen-api-client/blob/main/src/assets/logo.svg" style="height: 100px;">
 
-## Available Scripts
+  # **Burguer Queen**
 
-In the project directory, you can run:
+  <img src='https://img.shields.io/github/languages/top/marinamassaneiro/SAP008-burger-queen-api-client
+'>
+  <img src='https://img.shields.io/github/package-json/keywords/marinamassaneiro/SAP008-burger-queen-api-client
+'>
+  <img src='https://img.shields.io/github/last-commit/marinamassaneiro/SAP008-burger-queen-api-client
+'>
 
-### `npm start`
+  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" alt="Node.js" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest" style="height: 30px;"/> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height: 30px;"/> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" style="height: 30px;"/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <br>
 
-### `npm test`
+  **Status do Projeto:** _Em processo_ <br>
+  **Desenvolvido por:** [Joyce Teodoro](https://github.com/dodojoy) e [Marina Massaneiro](https://github.com/marinamassaneiro) 
+    
+  <!-- O **resultado final** pode ser visitado [aqui](https://marinamassaneiro.github.io/SAP008-burger-queen-api-client
+/)!! -->
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Indice**
+- [1. Apresentação](#1-apresentação)
+- [2. Funcionalidades do produto](#3-funcionalidades)
+- [3. Protótipo de Alta Fidelidade e Considerações da Pesquisa UX](#4-protótipo-de-alta-fidelidade-e-considerações-da-pesquisa-ux)
+- [4. Histórias de Usuário](#6-histórias-de-usuário)
+  - [4.1 História 1](#41-história-de-usuário-1)
+  - [4.2 História 2](#42-história-de-usuário-2)
+  - [4.3 História 3](#43-história-de-usuário-3)
+  - [4.4 História 4](#44-história-de-usuário-4)
+- [5. Objetivos de Aprendizagem](#7-objetivos-de-aprendizagem)
+- [6. Considerações Técnicas](#8-considerações-técnicas)
+- [7. Fonte das Imagens](#9-fonte-das-imagens)
 
-### `npm run build`
+***
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **1. Apresentação**
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Burguer Queen API Client foi o quarto projeto realizado no Bootcamp de Desenvolvimento Web da [Laboratória](https://hub.laboratoria.la/br).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Esse é um projeto de simulação com demanda de cliente. O objetivo é a criação de um sistema de restaurante com relação entre salão e cozinha utilizando SPA. Para isso recebemos as exigências de interface para o(a) garçom/garçonete e cozinheiro(a), documentação que especifica o comportamento esperado da API e as histórias de usuário. O projeto também traz como objetivo de aprendizagem consolidar metodologias de trabalho em equipes, portanto, foi  desenvolvido pela dupla: [Joyce Teodoro](https://github.com/dodojoy) e [Marina Massaneiro](https://github.com/marinamassaneiro).
 
-### `npm run eject`
+---
+## **2. Funcionalidades do produto**
+- Apenas pessoas cadastradas possuem acesso ao aplicativo.
+- Ao criar um cadastro a pessoa usuária será direcionada à página de login e então poderá logar no aplicativo.
+- A partir da função informada no cadastro o usuário será redirecionado para a timeline de salão ou cozinha.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **3. Protótipo de Alta Fidelidade e Considerações da Pesquisa UX e UI**
+---
+<!-- Pensando na melhor fluidez dos  -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **4. Histórias de Usuário**
+---
 
-## Learn More
+As histórias de usuário foram desenvolvidas pelo Product Owner em trabalho com o cliente de acordo com as necessidades do negócio. Levando em conta a definição de pronto:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  * Você deve ter recebido code review de pelo menos uma parceira.
+  * Fez testes unitários e, além disso, testou seu produto manualmente.
+  * Você fez testes de usabilidade e incorporou o feedback do usuário.
+  * Você deu deploy de seu aplicativo e marcou sua versão (tag git).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **4.1 História de Usuário 1**
 
-### Code Splitting
+> Eu, como garçom/garçonete quero entrar no sistema de pedidos.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* **Critérios de aceitação:**
+  * Acessar uma tela de login.
+  * Inserir email e senha.
+  * Receber mensagens de erros compreensíveis, conforme o erro e as informações inseridas.
+  * Entrar no sistema de pedidos caso as credenciais forem corretas.
 
-### Analyzing the Bundle Size
+### **4.2 História de Usuário 2**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> Eu como garçom/garçonete quero poder anotar o pedido de um cliente para não depender da minha memória, saber quanto cobrar e poder enviar os pedidos para a cozinha para serem preparados em ordem.
 
-### Making a Progressive Web App
+* **Critérios de aceitação:**
+  * Anotar o nome do cliente.
+  * Adicionar produtos aos pedidos.
+  * Excluir produtos.
+  * Ver resumo e o total da compra.
+  * Enviar o pedido para a cozinha (guardar em algum banco de dados).
+  * Funcionar bem em um tablet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### **4.3 História de Usuário 3**
 
-### Advanced Configuration
+> Eu como chefe de cozinha quero ver os pedidos dos clientes em ordem, poder marcar que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* **Critérios de aceitação:**
+  * Ver os pedidos ordenados à medida em que são feitos.
+  * Marcar os pedidos que foram preparados e estão prontos para serem servidos.
+  * Ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado como concluído.
 
-### Deployment
+### **4.4 História de Usuário 4**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes.
 
-### `npm run build` fails to minify
+* **Critérios de aceitação:**
+  * Ver a lista de pedidos prontos para servir.
+  * Marcar os pedidos que foram entregues.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Definição de pronto:**
+  * Para essa história é necessário também que os dados sejam mantidos intactos, mesmo depois que um pedido for finalizado. Tudo isso para poder ter estatísticas no futuro.
+
+## **5. Objetivos de Aprendizagem:**
+---
+
+## **6. Considerações técnicas:**
+---
+
+
+## **7. Fonte das imagens**
+---
+
+<!-- - Background protótipo versão final: Photo by <a href="">Pickled Stardust</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> --> -->
