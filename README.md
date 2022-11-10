@@ -47,13 +47,13 @@
 ***
 
 ## **1. Apresentação**
----
+
 
 Burguer Queen API Client foi o quarto projeto realizado no Bootcamp de Desenvolvimento Web da [Laboratória](https://hub.laboratoria.la/br).
 
 Esse é um projeto de simulação com demanda de cliente. O objetivo é a criação de um sistema de restaurante com relação entre salão e cozinha utilizando SPA. Para isso recebemos as exigências de interface para o(a) garçom/garçonete e cozinheiro(a), documentação que especifica o comportamento esperado da API e as histórias de usuário. O projeto também traz como objetivo de aprendizagem consolidar metodologias de trabalho em equipes, portanto, foi  desenvolvido pela dupla: [Joyce Teodoro](https://github.com/dodojoy) e [Marina Massaneiro](https://github.com/marinamassaneiro).
 
----
+
 ## **2. Funcionalidades do produto**
 - Apenas pessoas cadastradas possuem acesso ao aplicativo.
 - Ao criar um cadastro a pessoa usuária será direcionada à página de login e então poderá logar no aplicativo.
@@ -61,12 +61,12 @@ Esse é um projeto de simulação com demanda de cliente. O objetivo é a criaç
 
 
 ## **3. Protótipo de Alta Fidelidade e Considerações da Pesquisa UX e UI**
----
+
 <!-- Pensando na melhor fluidez dos  -->
 
 
 ## **4. Histórias de Usuário**
----
+
 
 As histórias de usuário foram desenvolvidas pelo Product Owner em trabalho com o cliente de acordo com as necessidades do negócio. Levando em conta a definição de pronto:
 
@@ -118,13 +118,13 @@ As histórias de usuário foram desenvolvidas pelo Product Owner em trabalho com
   * Para essa história é necessário também que os dados sejam mantidos intactos, mesmo depois que um pedido for finalizado. Tudo isso para poder ter estatísticas no futuro.
 
 ## **5. Objetivos de Aprendizagem:**
----
+
 
 ## **6. Considerações técnicas:**
----
+
 
 
 ## **7. Fonte das imagens**
----
+
 
 <!-- - Background protótipo versão final: Photo by <a href="">Pickled Stardust</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> --> -->
