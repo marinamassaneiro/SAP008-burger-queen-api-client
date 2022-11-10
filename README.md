@@ -51,7 +51,7 @@
 
 Burguer Queen API Client foi o quarto projeto realizado no Bootcamp de Desenvolvimento Web da [Laboratória](https://hub.laboratoria.la/br).
 
-Esse é um projeto de simulação com demanda de cliente. O objetivo é a criação de um sistema de restaurante com relação entre salão e cozinha utilizando SPA. Para isso recebemos as exigências de interface para o(a) garçom/garçonete e cozinheiro(a), documentação que especifica o comportamento esperado da API e as histórias de usuário. O projeto também traz como objetivo de aprendizagem consolidar metodologias de trabalho em equipes, portanto, foi  desenvolvido pela dupla: [Joyce Teodoro](https://github.com/dodojoy) e [Marina Massaneiro](https://github.com/marinamassaneiro).
+Esse é um projeto de simulação com demanda de cliente. O objetivo é a criação de um sistema de restaurante com relação entre salão e cozinha utilizando SPA. Para isso recebemos as exigências de interface para o(a) garçom/garçonete e cozinheiro(a), documentação que especifica o comportamento esperado da API e as histórias de usuário. O projeto também traz como objetivo de aprendizagem consolidar metodologias de trabalho em equipes, portanto, foi  desenvolvido em dupla.
 
 
 ## **2. Funcionalidades do produto**
