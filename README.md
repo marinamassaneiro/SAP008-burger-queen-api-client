@@ -4,12 +4,12 @@
 
   # **Burguer Queen**
 
-  <img src='https://img.shields.io/github/languages/top/marinamassaneiro/SAP008-burger-queen-api-client
+  <!-- <img src='https://img.shields.io/github/languages/top/marinamassaneiro/SAP008-burger-queen-api-client
 '>
   <img src='https://img.shields.io/github/package-json/keywords/marinamassaneiro/SAP008-burger-queen-api-client
 '>
   <img src='https://img.shields.io/github/last-commit/marinamassaneiro/SAP008-burger-queen-api-client
-'>
+'> -->
 
   
 
@@ -22,9 +22,9 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height: 30px;"/> 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" style="height: 30px;"/>
 
-  <br>
+  <br><br>
 
-  **Status do Projeto:** _Em processo_ <br>
+  **Status do Projeto:** _Em processo_ <br><br>
   **Desenvolvido por:** [Joyce Teodoro](https://github.com/dodojoy) e [Marina Massaneiro](https://github.com/marinamassaneiro) 
     
   <!-- O **resultado final** pode ser visitado [aqui](https://marinamassaneiro.github.io/SAP008-burger-queen-api-client
