@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img alt="Logo Burguer Queen" src="https://github.com/marinamassaneiro/SAP008-burger-queen-api-client/blob/main/src/assets/logo.svg" style="height: 100px;">
+  <img alt="Logo Burguer Queen" src="https://github.com/marinamassaneiro/SAP008-burger-queen-api-client/blob/main/src/assets/logo.svg" style="height: 150px;">
 
   # **Burguer Queen**
 
