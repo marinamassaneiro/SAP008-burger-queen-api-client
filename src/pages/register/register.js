@@ -7,7 +7,7 @@ import logo from '../../assets/logo.svg';
 import '../login/login.css'
 import '../../style.css'
 import './register.css'
-import { creatingUser } from '../../contexts/auth'
+import { createUser } from '../../contexts/auth'
 import { errorMessage } from "../../errors/error";
 import { useNavigate } from 'react-router-dom';
 
@@ -20,13 +20,13 @@ export const Register = () => {
   const error = errorMessage.error;
   const navigate = useNavigate();
 
-  const teste = (e) => {
+  const registerUser = (e) => {
     e.preventDefault();
     const tagErrorMessage = document.querySelector('#error-message');
     if (password !== confirmPassword) {
       tagErrorMessage.innerHTML = 'As senhas devem combinar'
     } else {
-      creatingUser(name, email, password, role)
+      createUser(name, email, password, role)
       .then((response) => {
         if (response.status === 200) {
           navigate('/login');
@@ -57,7 +57,7 @@ export const Register = () => {
             <OptionSelect value='Cozinheiro(a)' />
           </select>
           <p id='error-message'></p>
-          <Inputs type='submit' value='CADASTRAR' onClick={teste} />
+          <Inputs type='submit' value='CADASTRAR' onClick={registerUser} />
         </form>
         <FooterAuth text1='Já possui uma conta?' text2='Faça login!' href='/login' />
       </section>
