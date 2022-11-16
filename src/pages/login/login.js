@@ -6,7 +6,7 @@ import {
 import logo from '../../assets/logo.svg';
 import './login.css'
 import '../../style.css'
-import { createToken } from '../../contexts/auth'
+import { createToken, saveToken } from '../../contexts/api'
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
@@ -22,6 +22,7 @@ export const Login = () => {
           return response.json();
 				}
 			}).then ((data) => {
+        saveToken(data.token);
         if (data.role === 'atendente'){
 					navigate('/salon');
         } else {
@@ -32,6 +33,7 @@ export const Login = () => {
 			})
 			.catch((erro) => console.log(erro));
 	}
+
 	return (
 		<section className='div-auth'>
 			<img className='logo' src={logo} alt='logo'></img>

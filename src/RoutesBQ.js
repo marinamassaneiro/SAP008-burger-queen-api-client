@@ -18,7 +18,6 @@ export const RoutesBQ = () => {
         <Route exact path='/register' element={<Register />} />
         <Route exact path='/salon' element={<Salon />} />
         <Route exact path='/kitchen' element={<Kitchen />} />
-
       </Routes>
     </Fragment>
   </BrowserRouter>
