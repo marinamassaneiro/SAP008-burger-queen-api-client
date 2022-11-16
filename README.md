@@ -24,6 +24,7 @@
 
   <br>
 
+ 
   **Status do Projeto:** _Em processo_ <br><br>
   **Desenvolvido por:** [Joyce Teodoro](https://github.com/dodojoy) e [Marina Massaneiro](https://github.com/marinamassaneiro) 
     
