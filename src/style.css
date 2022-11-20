@@ -10,16 +10,22 @@
 
 :root {
   --color-white: #F7F6F6;
-  --color-off-white: #ECE6DF;
-  --color-red: #C43625;
-  --color-light-blue: #09757C;
-  --color-dark-blue: #03484D;
+  --color-details: #161615;
+  --color-alert: #C71B06;
+  --color-todo: #606C38;
+  --color-conclude: rgba(247,246,246,0.6);
+  --color-header-footer: #BC6C25;
+  /* --color-dark-blue: #03484D; */
+}
+
+#root {
+  height: 100vh;
 }
 
 body {
-  background-image: url(./assets/background.jpg);
+  background-image: url(./assets/background-james-sutton.jpg);
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -28,6 +34,6 @@ body {
 }
 
 .logo {
-  width: 20vw;
-  height: auto;
+  height: 30vh;
+  width: auto;
 }
