@@ -13,7 +13,6 @@ export const createUser = (name, email, password, role) => {
 };
 
 export const createToken = (email, password) => {
-  console.log(email, password);
   return fetch('https://lab-api-bq.onrender.com/auth', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -24,13 +23,19 @@ export const createToken = (email, password) => {
   });
 };
 
+export const saveName = (name) => {
+  localStorage.setItem('name', name);
+}
+
+export const name = () => localStorage.getItem('name');
+
 export const saveToken = (token) => {
   localStorage.setItem('token', token);
 }
 
-export const token = () => localStorage.getItem('token');
+const token = () => localStorage.getItem('token');
 
-export const allProducts = () => {
+export const allProducts = async () => {
   return fetch('https://lab-api-bq.onrender.com/products', {
     method: 'GET',
     headers: {
@@ -40,20 +45,23 @@ export const allProducts = () => {
   });
 };
 
+export const allUsers = () => {
+  return fetch('https://lab-api-bq.onrender.com/users', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json', 
+    'Authorization': token() 
+    },
+  })
+};
 
-
-
-
-
-// export const allUsers = () => {
-//   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVAdS5jb20iLCJpZCI6MjIsImlhdCI6MTY2NzkzNzY1MSwiZXhwIjoxNjk5NDk1MjUxfQ.hbl2v-R3ofyvWfBklYfaF7qsdXGUjKWSKLGs_xvvxhY"
+// export const authUser = () => {
 //   return fetch('https://lab-api-bq.onrender.com/users', {
 //     method: 'GET',
 //     headers: { 'Content-Type': 'application/json', 
-//     'Authorization': token },
+//     'Authorization': token() 
+//     },
 //   })
 // };
-
 
 // import React, { createContext, useEffect, useState } from "react";
 

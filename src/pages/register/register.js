@@ -6,7 +6,7 @@ import {
 import logo from '../../assets/logo.svg';
 import '../login/login.css'
 import '../../style.css'
-import './register.css'
+// import './register.css'
 import { createUser } from '../../contexts/api'
 import { errorMessage } from "../../errors/error";
 import { useNavigate } from 'react-router-dom';
@@ -27,24 +27,25 @@ export const Register = () => {
       tagErrorMessage.innerHTML = 'As senhas devem combinar'
     } else {
       createUser(name, email, password, role)
-      .then((response) => {
-        if (response.status === 200) {
-          navigate('/login');
-          return response.json();
-        }
-        tagErrorMessage.innerHTML = error[0].register[response.status];
-      })
-      .then((data) => {
-        if(!data) return;
-        console.log(data.token);
-        console.log(data);
-      })
-      .catch((erro) => console.log(erro));
+        .then((response) => {
+          if (response.status === 200) {
+            navigate('/login');
+            return response.json();
+          }
+          tagErrorMessage.innerHTML = error[0].register[response.status];
+        })
+        .then((data) => {
+          if (!data) return;
+          console.log(data.token);
+          console.log(data);
+        })
+        .catch((erro) => console.log(erro));
     }
   }
 
-    return (
-      <section className='div-auth'>
+  return (
+    <section className="body-auth">
+      <div className='div-auth'>
         <img className='logo' src={logo} alt='logo'></img>
         <form>
           <Inputs type='text' onChange={(e) => setName(e.target.value)} placeholder='NOME' class /><br />
@@ -60,8 +61,9 @@ export const Register = () => {
           <Inputs type='submit' value='CADASTRAR' onClick={registerUser} />
         </form>
         <FooterAuth text1='Já possui uma conta?' text2='Faça login!' href='/login' />
-      </section>
-    );
+      </div>
+    </section>
+  );
 }
 
 // const user = {
