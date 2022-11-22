@@ -10,11 +10,32 @@ import logo from '../../assets/logo.svg';
 import logout from '../../assets/logout.png';
 import './salon.css'
 import '../../style.css'
-import { allProducts, name } from '../../contexts/api';
+import { allProducts, name, createOrder } from '../../contexts/api';
 
 
 export const Salon = () => {
   const [selectProducts, setSelectProducts] = useState([]);
+  const [products, setProduct] = useState([]);
+  const [qtd, setQtd] = useState(1);
+
+  // console.log(products);
+  // const [order, setOrder] = useState('');
+  const [client, setClient] = useState('');
+  const [table, setTable] = useState('');
+  // const [order, setOrder] = useState('');
+
+  function teste(p) {
+    const teste2 = products.findIndex((e)=> e.id === p.id);
+    if (teste2 === -1){
+      return setProduct([...products, {
+        "id": p.id,
+        "qtd": 1
+      }])
+    } else {
+      return setQtd(products[teste2].qtd += 1)
+    }
+    }
+
 
   useEffect(() => {
     allProducts()
@@ -24,11 +45,20 @@ export const Salon = () => {
       });
   }, []);
 
-  console.log(selectProducts);
+  const makeOrder = () => {
+      createOrder(client, table, products)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((erro) => console.log(erro));
+  }
+
+  // console.log(selectProducts);
 
   const productsBreakfast = selectProducts.map((p) => {
     if (p.sub_type === 'breakfast') {
-      return <Products key={p.id} name={p.name} price={p.price} />;
+      return <Products onClick={ () => teste(p) } key={p.id} name={p.name} price={p.price} />;
     };
   });
 
@@ -60,7 +90,9 @@ export const Salon = () => {
           <Details className='detailsMenu breakfast-menu' text1='Café da Manhã' product={productsBreakfast} />
           <Details className='detailsMenu hamburguer-menu' text1='Hamburgueres' product={productsHamburguer} />
           <Details className='detailsMenu others-menu' text1='Acompanhamentos e Bebidas' product={productsOthers} />
-          <Check client='Marina' table='2' order='13'/>
+          <Check onClick={makeOrder} client={<input type="text" className="input-order-client" onChange={(e) => setClient(e.target.value)} />} 
+          table={<input type="number" className="input-order-table" onChange={(e) => setTable(e.target.value)} />} >
+</Check>
         </details>
         <Details className='details closed' text1='Pedidos finalizados' />
       

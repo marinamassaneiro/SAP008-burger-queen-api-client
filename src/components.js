@@ -43,27 +43,27 @@ export function Details({ text1, className, element1, element2, element3, produc
 	);
 }
 
-export function Products ({ name, price }) {
+export function Products ({ name, price, onClick }) {
   return (
     <div className="products-list">
       <p> {name} </p> 
       <p> R$ {price} </p>
-      <button>+</button>
+      <button onClick={onClick}>+</button>
     </div>
   )
 }
 
-export function Check ({client, table, order, itens, counter}){
+export function Check ({ client, table, order, itens, counter, onClick }){
   return (
     <section className="check">
       <div className="header-count">
-        <p>Cliente {client}</p>
-        <p>Mesa {table}</p>
-        <p>Pedido {order}</p> 
+        <p>Cliente:{client}</p>
+        <p>Mesa:{table}</p>
+        <p>Pedido:{order}</p> 
       </div>
       {itens}
       <p>Total R$ {counter}</p>
-    <button>Enviar pedido à cozinha</button>
+    <button onClick={onClick} >Enviar pedido à cozinha</button>
   </section>
   )
 }

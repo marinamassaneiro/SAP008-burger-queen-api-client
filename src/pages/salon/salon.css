@@ -25,7 +25,7 @@
 
 .container-salon {
   background-color: rgba(22,22,21,0.95);
-  padding: 5vh 0;
+  padding: 5vh 0 15vh;
   height: 100vh;
 }
 
@@ -71,7 +71,7 @@
   grid-template-columns: 3fr 1fr 1fr;
   align-items: center;
   margin: 0 0 1vh;
-  padding: 0.5vh 2vw;
+  padding: 1vh 2vw;
   border-radius: 5px;
   color: var(--color-details);
   font-size: 1.5rem;
@@ -104,9 +104,28 @@
 }
 
 .container-salon > .new-ordered > .check > p {
-  padding: 1vh 5vw;
+  padding: 1vh 0.5vw;
   color: var(--color-details);
   text-align: end;
+}
+
+.container-salon > .new-ordered > .check > .header-count > p > .input-order-client {
+  background-color: #BC6C25;
+  border: none;
+  padding: 0 1vw;
+  height: 3vh;
+  width: 16vw;
+  color: var(--color-white);
+  font-size: 1.4rem;
+}
+
+.container-salon > .new-ordered > .check > .header-count > p > .input-order-table {
+  background-color: #BC6C25;
+  border: none;
+  height: 3vh;
+  width: 5vw;
+  color: var(--color-white);
+  font-size: 1.4rem;
 }
 
 .container-salon > .new-ordered > .check > button {
