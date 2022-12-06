@@ -1,0 +1,22 @@
+.products-list, .itens-count {
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  align-items: center;
+  margin: 0 0 1vh;
+  padding: 1vh 2vw;
+  border-radius: 5px;
+  color: var(--color-details);
+  font-size: 1.5rem;
+}
+
+.new-ordered > .detailsMenu > .products-list > button {
+  background-color: var(--color-white);
+  height: 45px;
+  width: 45px;
+  border: 3px solid var(--color-details);
+  border-radius: 50px;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}

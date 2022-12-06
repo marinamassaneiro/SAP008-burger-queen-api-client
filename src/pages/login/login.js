@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import {
-  Inputs,
-  FooterAuth
-} from '../../components'
+import { FooterAuth } from '../../components/footerAuth/footerAuth'
+import { Inputs } from "../../components/inputs/inputs";
 import logo from '../../assets/logo.svg';
 import './login.css'
 import '../../style.css'

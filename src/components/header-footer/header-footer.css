@@ -1,0 +1,41 @@
+.header {
+  background-color: #BC6C25;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16vw;
+  align-items: center;
+  top: 0;
+  width: 100vw;
+  padding-top: 1vh;
+  color: #F7F6F6;
+  font-size: 1.6rem;
+}
+
+.logout {
+  height: auto;
+  width: 60px;
+  cursor: pointer;
+}
+
+.logo-home {
+  height: 120px;
+  width: auto;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: var(--color-header-footer);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  width: 100vw;
+}
+
+.footer > a {
+  padding: 4vh 0;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
