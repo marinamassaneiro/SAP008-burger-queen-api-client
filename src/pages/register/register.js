@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import {
-  OptionSelect, Inputs,
-  FooterAuth
-} from '../../components'
+import { FooterAuth } from '../../components/footerAuth/footerAuth'
+import { OptionSelect, Inputs } from '../../components/inputs/inputs'
 import logo from '../../assets/logo.svg';
 import '../login/login.css'
 import '../../style.css'
-// import './register.css'
 import { createUser } from '../../contexts/api'
 import { errorMessage } from "../../errors/error";
 import { useNavigate } from 'react-router-dom';

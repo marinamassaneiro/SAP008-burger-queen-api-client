@@ -54,6 +54,22 @@ export const allUsers = () => {
   })
 };
 
+export const createOrder = (client, table, products) => {
+  console.log(client, table, products);
+  return fetch('https://lab-api-bq.onrender.com/orders', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': token() },
+    body: JSON.stringify({
+      client: client,
+      table: table,
+      products: products
+    }),
+  });
+};
+
+
+
+
 // export const authUser = () => {
 //   return fetch('https://lab-api-bq.onrender.com/users', {
 //     method: 'GET',

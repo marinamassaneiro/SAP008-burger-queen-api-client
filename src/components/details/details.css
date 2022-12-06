@@ -1,0 +1,40 @@
+.details {
+  margin: 0 10vw;
+  border: 1px solid var(--color-details);
+  padding: 2vh 5vw;
+  border-radius: 10px;
+  color: var(--color-white);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.details > summary {
+  cursor: pointer;
+}
+
+.to-delivery {
+  background-color: var(--color-alert);
+}
+
+.new-ordered {
+  background-color: var(--color-todo);
+  margin: 5vh 10vw;
+}
+
+.new-ordered > .detailsMenu {
+  background-color: rgba(247, 246, 246, 0.1);
+  margin: 3vh 0;
+  border: 2px solid var(--color-white);
+  padding: 0 2vw;
+  border-radius: 10px;
+}
+
+.new-ordered > .detailsMenu > summary {
+  margin: 2vh 0;
+  cursor: pointer;
+}
+
+.closed {
+  background-color: var(--color-conclude);
+  color: var(--color-details);
+}
