@@ -38,6 +38,38 @@
   font-size: 1.4rem;
 }
 
+.check > .itens-count {
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  align-items: center;
+  margin: 3vh 0;
+  padding: 1vh 1vw;
+  border-radius: 5px;
+  color: var(--color-details);
+  font-size: 1.5rem;
+}
+
+.check > .itens-count > .counter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin: 0 3vw;
+}
+
+.check > .itens-count > .counter > button {
+  background-color: var(--color-white);
+  height: 45px;
+  width: 45px;
+  border: 3px solid var(--color-details);
+  margin: 0 2vw;
+
+  border-radius: 50px;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .check > button {
   background-color: var(--color-alert);
   width: 100%;
