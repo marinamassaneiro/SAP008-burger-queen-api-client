@@ -16,7 +16,7 @@
   "homepage": "https://marinamassaneiro.github.io/SAP008-burger-queen-api-client",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
