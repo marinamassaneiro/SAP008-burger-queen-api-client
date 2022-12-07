@@ -39,7 +39,6 @@ export const Salon = () => {
     }
   }
 
-
   function addProductCount(p) {
     const productId = products.findIndex((e) => e.id === p.id);
     if (productId === -1) {
