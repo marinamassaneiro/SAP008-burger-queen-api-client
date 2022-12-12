@@ -63,7 +63,8 @@ Esse é um projeto de simulação com demanda de cliente. O objetivo é a criaç
 
 ## **3. Protótipo de Alta Fidelidade e Considerações da Pesquisa UX e UI**
 
-<!-- Pensando na melhor fluidez dos  -->
+O objetivo era manter uma única tela com todas as informações, mas que também fosse possível "esconder" para que não houvesse confusão visual para o usuário, assim optamos pela utilização da tag "details". Na primeira versão recebemos feedbacks de contraste da imagem de background e centralização da caixa de login. Aqui o resultado final:
+
 
 
 ## **4. Histórias de Usuário**
