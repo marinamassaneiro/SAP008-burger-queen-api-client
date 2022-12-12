@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SAP008-burger-queen-api-client/static/css/main.0959f992.css",
-    "main.js": "/SAP008-burger-queen-api-client/static/js/main.ae4fa015.js",
-    "static/media/background-james-sutton.jpg": "/SAP008-burger-queen-api-client/static/media/background-james-sutton.d5b39d876274964f9da8.jpg",
-    "static/media/logo.svg": "/SAP008-burger-queen-api-client/static/media/logo.766be2e645fc35bd9575e27c035b86e6.svg",
-    "index.html": "/SAP008-burger-queen-api-client/index.html",
-    "main.0959f992.css.map": "/SAP008-burger-queen-api-client/static/css/main.0959f992.css.map",
-    "main.ae4fa015.js.map": "/SAP008-burger-queen-api-client/static/js/main.ae4fa015.js.map"
+    "main.css": "/static/css/main.af1bc5d8.css",
+    "main.js": "/static/js/main.50385f1c.js",
+    "static/media/background-james-sutton.jpg": "/static/media/background-james-sutton.d5b39d876274964f9da8.jpg",
+    "static/media/logo.svg": "/static/media/logo.766be2e645fc35bd9575e27c035b86e6.svg",
+    "index.html": "/index.html",
+    "main.af1bc5d8.css.map": "/static/css/main.af1bc5d8.css.map",
+    "main.50385f1c.js.map": "/static/js/main.50385f1c.js.map"
   },
   "entrypoints": [
-    "static/css/main.0959f992.css",
-    "static/js/main.ae4fa015.js"
+    "static/css/main.af1bc5d8.css",
+    "static/js/main.50385f1c.js"
   ]
 }
