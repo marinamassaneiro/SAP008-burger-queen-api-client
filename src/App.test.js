@@ -6,26 +6,18 @@ beforeEach(() => {
 
 describe('createUser', () => {
   it("create a new user", async () => {
-    const createdAt = "2022-11-21T23:54:12.223Z";
-    const id = 1;
-    const name = 'dodo';
-    const email = 'dodo@dodo.com';
-    const password = '123456';
-    const role = 'atendente';
-    const updatedAt = "2022-11-21T23:54:12.223Z";
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYWFhQGFhYWEuY29tIiwiaWQiOjcsImlhdCI6MTY2OTA3NDg1MiwiZXhwIjoxNzAwNjMyNDUyfQ';
     const objeto = {
-      createdAt: createdAt,
-      email: email,
-      id: id,
-      name: name,
+      createdAt: "2022-11-21T23:54:12.223Z",
+      email: 'dodo@dodo.com',
+      id: 1,
+      name: 'dodo',
       restaurant: 'Burguer Queen',
-      role: role,
-      token: token,
-      updatedAt: updatedAt,
+      role: 'atendente',
+      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYWFhQGFhYWEuY29tIiwiaWQiOjcsImlhdCI6MTY2OTA3NDg1MiwiZXhwIjoxNzAwNjMyNDUyfQ',
+      updatedAt: "2022-11-21T23:54:12.223Z",
     };
     jest.spyOn(window, 'fetch').mockResolvedValueOnce(objeto);
-    const create = await createUser(name, email, password, role);
+    const create = await createUser('dodo', 'dodo@dodo.com', '123456', 'atendente');
   
     expect(create).toEqual(objeto);
   })

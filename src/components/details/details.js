@@ -1,9 +1,9 @@
 import './details.css'
 
-export function Details({ text1, className, product }) {
+export function Details({ summary, className, product }) {
 	return (
 		<details className={className}>
-      <summary>{text1}</summary>
+      <summary>{summary}</summary>
       {product}
     </details>
 	);

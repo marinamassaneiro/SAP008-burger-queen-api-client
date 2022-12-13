@@ -1,4 +1,4 @@
-.header {
+header {
   background-color: #BC6C25;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.footer {
+footer {
   background-color: var(--color-header-footer);
   position: fixed;
   display: flex;
@@ -32,7 +32,7 @@
   width: 100vw;
 }
 
-.footer > a {
+footer > a {
   padding: 4vh 0;
   cursor: pointer;
   color: var(--color-white);

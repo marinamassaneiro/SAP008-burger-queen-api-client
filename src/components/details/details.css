@@ -16,7 +16,7 @@
   background-color: var(--color-alert);
 }
 
-.new-ordered {
+.new-ordered, .preparing {
   background-color: var(--color-todo);
   margin: 5vh 10vw;
 }
