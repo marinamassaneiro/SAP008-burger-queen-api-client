@@ -20,7 +20,6 @@ export const Login = () => {
           return response.json();
         }
       }).then((data) => {
-        console.log(data.token);
         saveToken(data.token);
         saveName(data.name);
         if (data.role === 'atendente') {
@@ -28,8 +27,6 @@ export const Login = () => {
         } else {
           navigate('/kitchen');
         }
-        // if (!data) return;
-        // 		console.log(data);
       })
       .catch((erro) => console.log(erro));
   }
