@@ -1,16 +1,17 @@
 import './check.css';
 
-export function Itens({ name, counter, price, onClick1, onClick2 }) {
+export function Itens({ name, counter, price, onClick1, onClick2, totalPrice }) {
   return (
     <div className="itens-count">
       <p> {name} </p>
-      <div className='counter'><button onClick={onClick1} >-</button>{counter}<button onClick={onClick2} >+</button></div>
       <p> R$ {price} </p>
+      <div className='counter'><button onClick={onClick1} >-</button>{counter}<button onClick={onClick2} >+</button></div>
+      <p>R$ {totalPrice}</p>
     </div>
   )
 }
 
-export function Check({ client, table, itens, counter, onClick }) {
+export function Check({ itens, client, table, counter, onClick }) {
   return (
     <section className="check">
       <div className="header-count">

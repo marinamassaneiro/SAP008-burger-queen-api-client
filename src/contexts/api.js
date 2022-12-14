@@ -67,6 +67,10 @@ export const createOrder = (client, table, products) => {
   });
 };
 
+// export const orderToKitchen = (order) => {
+//   localStorage.setItem('token', order);
+// }
+
 
 
 

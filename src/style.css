@@ -33,6 +33,12 @@ body {
   align-items: center;
 }
 
+.container {
+  background-color: rgba(22,22,21,0.95);
+  padding: 5vh 0 15vh;
+  height: 100vh;
+}
+
 .logo {
   height: 30vh;
   width: auto;
