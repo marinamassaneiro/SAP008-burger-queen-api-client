@@ -48,14 +48,14 @@ export const allProducts = async () => {
 export const allUsers = () => {
   return fetch('https://lab-api-bq.onrender.com/users', {
     method: 'GET',
-    headers: { 'Content-Type': 'application/json', 
-    'Authorization': token() 
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': token()
     },
   })
 };
 
 export const createOrder = (client, table, products) => {
-  console.log(client, table, products);
   return fetch('https://lab-api-bq.onrender.com/orders', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': token() },
@@ -67,21 +67,35 @@ export const createOrder = (client, table, products) => {
   });
 };
 
-// export const orderToKitchen = (order) => {
-//   localStorage.setItem('token', order);
+export const orderToKitchen = () => {
+  return fetch('https://lab-api-bq.onrender.com/orders', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': token(),
+    },
+  });
+}
+
+// export const orderId = (orderId) => {
+//   localStorage.setItem('orderId', orderId);
 // }
 
+// const orderId = () => localStorage.getItem('orderId');
+
+export const updateOrderStatus = (orderStatus, orderId) => {
+  console.log(orderId, orderStatus)
+  return fetch('https://lab-api-bq.onrender.com/orders', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json','Authorization': token(), 'orderId': orderId },
+    body: JSON.stringify({
+      'status': orderStatus
+    }),
+  });
+}
 
 
 
-// export const authUser = () => {
-//   return fetch('https://lab-api-bq.onrender.com/users', {
-//     method: 'GET',
-//     headers: { 'Content-Type': 'application/json', 
-//     'Authorization': token() 
-//     },
-//   })
-// };
 
 // import React, { createContext, useEffect, useState } from "react";
 

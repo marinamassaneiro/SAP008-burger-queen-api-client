@@ -15,7 +15,6 @@
   --color-todo: #606C38;
   --color-conclude: rgba(247,246,246,0.6);
   --color-header-footer: #BC6C25;
-  /* --color-dark-blue: #03484D; */
 }
 
 #root {
@@ -36,7 +35,7 @@ body {
 .container {
   background-color: rgba(22,22,21,0.95);
   padding: 5vh 0 15vh;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .logo {
