@@ -113,7 +113,7 @@ export const Salon = () => {
               } else if (p.flavor !== null && p.complement !== null) {
                 return <Itens onClick1={() => deleteProductCount(p)} onClick2={() => addProductCount(p)} key={p.id} counter={p.qtd} name={`${p.name} ${p.flavor} com ${p.complement}`} price={p.price} totalPrice={p.price * p.qtd} />;
               }
-            } return <Itens onClick1={() => deleteProductCount(p)} onClick2={() => addProductCount(p)} key={p.id} name={p.name} counter={p.qtd} price={p.price} totalPrice={counterTotal(products)} />
+            } return <Itens onClick1={() => deleteProductCount(p)} onClick2={() => addProductCount(p)} key={p.id} name={p.name} counter={p.qtd} price={p.price} totalPrice={p.price * p.qtd} />
           })} client={<input type="text" className="input-order-client" onChange={(e) => setClient(e.target.value)} />}
             table={<input type="number" className="input-order-table" onChange={(e) => setTable(e.target.value)} />} onClick={makeOrder} counter={products.length}
           >
