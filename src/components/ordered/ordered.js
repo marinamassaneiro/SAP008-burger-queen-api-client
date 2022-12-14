@@ -1,4 +1,4 @@
-import './ordered.css';
+import './order2.css';
 
 export function ItensOrdered ({ name, qtd }) {
   return (
