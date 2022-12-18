@@ -79,9 +79,9 @@ export const Salon = () => {
     createOrder(client, table, productsOrder)
       .then((response) => response.json())
       .then(() => {
-        setProductsOrder([]);
+        setClient(''); //não funciona nao sei pq
         setTable('');
-        setClient('');
+        setProductsOrder([]);    
       })
       .catch((erro) => console.log(erro));
   }

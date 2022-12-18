@@ -27,6 +27,8 @@ export const Kitchen = () => {
       .catch((erro) => console.log(erro));
     }
 
+    console.log(allOrdered)
+
   const printOrdered = allOrdered.map((ordered) => {
     if (ordered.status === 'pending') {
       return <Ordered key={ordered.id} onclick={() => attOrder(ordered)} client={ordered.client_name} table={ordered.table} idOrdered={ordered.id}
@@ -40,8 +42,6 @@ export const Kitchen = () => {
     }
   })
 
-
-
   return (
     <section>
       <Header href1='login' logout={logout} title='Cozinha' href2='salon' logo={logo} />
@@ -51,7 +51,7 @@ export const Kitchen = () => {
         <Details className='details preparing' summary='Pedidos em produção' />
         <Details className='details closed' summary='Pedidos finalizados' />
       </section>
-      <Footer href1='salon' text1='Ir para conta' href2='salon' text2='Ir para produtos prontos' />
+      <Footer href1='salon' text1='Ir para pedidos pendentes' href2='salon' />
     </section>
   );
 }
