@@ -32,8 +32,6 @@ export const Register = () => {
         })
         .then((data) => {
           if (!data) return;
-          console.log(data.token);
-          console.log(data);
         })
         .catch((erro) => console.log(erro));
     }
@@ -57,7 +55,7 @@ export const Register = () => {
           <Inputs type='submit' value='CADASTRAR' onClick={registerUser} />
         </form>
         <footer> 
-          <p className="footer-auth">Já possui uma conta?<Link to="/register">Faça login</Link></p>
+          <p className="footer-auth">Já possui uma conta?<Link to="/login">Faça login</Link></p>
         </footer>
       </div>
     </section>
