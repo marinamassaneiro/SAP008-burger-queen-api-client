@@ -15,7 +15,12 @@
   border-radius: 10px;
 }
 
-.footer-auth {
+.error-msg {
+  color: var(--color-alert);
+  margin: 1vh 1vw;
+}
+
+.footer-auth, .error-msg {
   font-size: 1rem;
   font-weight: 600;
 }
