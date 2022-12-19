@@ -13,34 +13,29 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('');
-  const error = errorMessage.error;
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const registerUser = (e) => {
     e.preventDefault();
-    const tagErrorMessage = document.querySelector('#error-message');
-    if (password !== confirmPassword) {
-      tagErrorMessage.innerHTML = 'As senhas devem combinar'
-    } else {
-      createUser(name, email, password, role)
-        .then((response) => {
-          if (response.status === 200) {
-            navigate('/login');
-            return response.json();
-          }
-          tagErrorMessage.innerHTML = error[0].register[response.status];
-        })
-        .then((data) => {
-          if (!data) return;
-        })
-        .catch((erro) => console.log(erro));
-    }
+    createUser(name, email, password, role)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.code === 400) {
+          return setError(data.message)
+        } return data 
+      })
+      .then((data) => {
+        if (!data) return;
+        navigate('/login');
+      })
+      .catch((erro) => console.log(erro));
   }
 
   return (
     <section className="body-auth">
-      <div className='div-auth'>
-        <img className='logo' src={logo} alt='logo'></img>
+      <div className="div-auth">
+        <img className="logo" src={logo} alt="logo"></img>
         <form>
           <Inputs type='text' onChange={(e) => setName(e.target.value)} placeholder='NOME' class /><br />
           <Inputs type='email' onChange={(e) => setEmail(e.target.value)} placeholder='E-MAIL' class /><br />
@@ -50,11 +45,11 @@ export const Register = () => {
             <OptionSelect value='Sua função' />
             <OptionSelect value='Atendente' />
             <OptionSelect value='Cozinheiro(a)' />
-          </select>
-          <p id='error-message'></p>
+          </select><br />
           <Inputs type='submit' value='CADASTRAR' onClick={registerUser} />
+          <p className="error-msg">{error}</p>
         </form>
-        <footer> 
+        <footer>
           <p className="footer-auth">Já possui uma conta?<Link to="/login">Faça login</Link></p>
         </footer>
       </div>

@@ -12,7 +12,7 @@ export function Header({ href1, logout, title, href2, logo }) {
 
 export function FooterSalon({ href1, text1, href2, text2 }) {
   return (
-    <footer>
+    <footer className='footer-salon'>
       <a href={href1}>{text1}</a>
       <a href={href2}>{text2}</a>
     </footer>
@@ -21,7 +21,7 @@ export function FooterSalon({ href1, text1, href2, text2 }) {
 
 export function FooterKitchen({ href1, text1 }) {
   return (
-    <footer>
+    <footer className='footer-kitchen'>
       <a href={href1}>{text1}</a>
     </footer>
   )
