@@ -14,3 +14,20 @@
   width: fit-content;
   border-radius: 10px;
 }
+
+.footer-auth {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-auth>Link {
+  color: var(--color-details);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-auth>a:hover {
+  color: var(--color-header-footer);
+  font-size: 1rem;
+  font-weight: 600;
+}
