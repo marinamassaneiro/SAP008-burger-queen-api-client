@@ -25,7 +25,9 @@ export const Login = () => {
         saveName(data.name);
         if (data.role === 'atendente') {
           navigate('/salon');
-        } navigate('/kitchen');
+        } else {
+          navigate('/kitchen')
+        };
       })
       .catch((erro) => console.log(erro));
   }
