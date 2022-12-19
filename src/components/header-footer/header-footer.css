@@ -23,7 +23,7 @@ header {
   cursor: pointer;
 }
 
-.footer-salon, .footer-kitchen {
+.footer-timeline {
   background-color: var(--color-header-footer);
   position: fixed;
   display: flex;
@@ -32,7 +32,7 @@ header {
   width: 100vw;
 }
 
-.footer-salon, .footer-kitchen > a {
+.footer-timeline > a {
   padding: 4vh 0;
   cursor: pointer;
   color: var(--color-white);

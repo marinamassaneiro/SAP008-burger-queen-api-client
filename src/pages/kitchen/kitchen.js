@@ -63,7 +63,7 @@ export const Kitchen = () => {
           })} />
         <Details className='details closed' summary='Pedidos finalizados'
           product={ allOrdered.map((ordered, index) => {
-            if (ordered.status === 'done') {
+            if (ordered.status === 'finished') {
               return <Done key={index} client={ordered.client_name} table={ordered.table} idOrdered={ordered.id} />
             }
           })} />
