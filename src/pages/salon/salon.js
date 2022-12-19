@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Products } from '../../components/products/products'
+import { Products, ToDelivery } from '../../components/products/products'
 import { Details } from '../../components/details/details'
 import { Header, FooterSalon } from '../../components/header-footer/header-footer'
 import { Check, Itens } from '../../components/check/check'
 import logo from '../../assets/logo.svg';
 import logout from '../../assets/logout.png';
 import '../../style.css'
-import { allProducts, name, createOrder } from '../../contexts/api';
+import { allProducts, name, createOrder, orderToKitchen, updateOrderStatus } from '../../contexts/api';
+import { Done } from "../../components/ordered/ordered";
 
 
 export const Salon = () => {
   const [selectAllProducts, setSelectAllProducts] = useState([]);
   const [productsOrder, setProductsOrder] = useState([]);
-  const [qtd, setQtd] = useState(1);
+  const [allOrdered, setAllOrdered] = useState([]);
 
+  const [qtd, setQtd] = useState(1);
   const [client, setClient] = useState('');
   const [table, setTable] = useState('');
 
@@ -24,6 +26,19 @@ export const Salon = () => {
         setSelectAllProducts(data);
       });
   }, []);
+
+  useEffect(() => {
+    orderToKitchen()
+      .then((response) => response.json())
+      .then((data) => {
+        setAllOrdered(data);
+      });
+  }, []);
+
+  function statusFinished(ordered) { 
+    updateOrderStatus('finished', ordered.id)
+    // .then(() => window.location.reload()); 
+  }
 
   const productsBreakfast = selectAllProducts.map((product) => {
     if (product.sub_type === 'breakfast') {
@@ -87,7 +102,13 @@ export const Salon = () => {
     <section>
       <Header href1='login' logout={logout} title={`Atendente: ${name()}`} href2='salon' logo={logo} />
       <main className="container">
-        <Details className='details to-delivery' summary='Pedidos prontos para entrega' />
+        <Details className='details to-delivery' summary='Pedidos prontos para entrega'
+        product={ allOrdered.map((ordered, index) => {
+          if (ordered.status === 'done') {
+            return <ToDelivery key={index} client={ordered.client_name} table={ordered.table} 
+            idOrdered={ordered.id} onClick={() => statusFinished(ordered)}/>
+          }
+        })} />
         <details className="details new-ordered">
           <summary>Novos pedidos</summary>
           <Details className='detailsMenu breakfast-menu' summary='Café da Manhã' product={productsBreakfast} />
@@ -113,7 +134,12 @@ export const Salon = () => {
           >
           </Check>
         </details>
-        <Details className='details closed' summary='Pedidos finalizados' />
+        <Details className='details closed' summary='Pedidos finalizados'
+          product={ allOrdered.map((ordered, index) => {
+            if (ordered.status === 'finished') {
+              return <Done key={index} client={ordered.client_name} table={ordered.table} idOrdered={ordered.id} />
+            }
+          })} />
       </main>
       <FooterSalon href1='salon' text1='Ir para conta' href2='salon' text2='Ir para produtos prontos' />
     </section>

@@ -10,3 +10,14 @@ export function Products({ name, price, onClick }) {
   )
 }
 
+export function ToDelivery({ client, table, idOrdered, onClick }) {
+  return (
+    <div className="order-to-delivery">
+      <p>Cliente: {client}</p>
+      <p>Mesa: {table}</p>
+      <p>Pedido: {idOrdered}</p>
+      <button onClick={onClick}>ENTREGUE</button>
+    </div>
+  )
+}
+

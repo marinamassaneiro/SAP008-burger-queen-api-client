@@ -20,3 +20,24 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.order-to-delivery {
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  margin: 1vh 0 0.5vh;
+  padding: 1vh 2vw;
+  color: var(--color-details);
+}
+
+.order-to-delivery > button {
+  background-color: var(--color-alert);
+  border: none;
+  border-radius: 10px;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5vh 0 0.5vh 2.5vw;
+  padding: 1vh 1vw;
+}
