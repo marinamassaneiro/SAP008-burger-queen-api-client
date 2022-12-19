@@ -63,11 +63,3 @@ export const Register = () => {
     </section>
   );
 }
-
-// const user = {
-//   "name": "Sample Name - optional",
-//   "email": "sample@mail.com",
-//   "password": "sample",
-//   "role": "sample role",
-//   "restaurant": "sample restaurant"
-// }
