@@ -1,6 +1,6 @@
 import './order2.css';
 
-export function ItensOrdered ({ name, qtd }) {
+export function ItensOrdered({ name, qtd }) {
   return (
     <div className="itens-ordered">
       <p> {name} </p>
@@ -9,7 +9,7 @@ export function ItensOrdered ({ name, qtd }) {
   )
 }
 
-export function Ordered({ client, table, idOrdered, onClick, itens, className }) {
+export function Ordered({ client, table, idOrdered, onClick, itens, className, txtBtn }) {
   return (
     <div className="ordered">
       <div className="header-ordered">
@@ -18,7 +18,17 @@ export function Ordered({ client, table, idOrdered, onClick, itens, className })
         <p>Pedido: {idOrdered}</p>
       </div>
       {itens}
-      <button className={className} onClick={onClick} >Preparar pedido</button>
+      <button className={className} onClick={onClick} >{txtBtn}</button>
+    </div>
+  )
+}
+
+export function Done({ client, table, idOrdered }) {
+  return (
+    <div className="done">
+      <p>Cliente: {client}</p>
+      <p>Mesa: {table}</p>
+      <p>Pedido: {idOrdered}</p>
     </div>
   )
 }
