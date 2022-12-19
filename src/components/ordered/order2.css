@@ -4,7 +4,7 @@
   border-radius: 10px;
 }
 
-.ordered>.header-ordered {
+.ordered>.header-ordered, .done {
   background-color: var(--color-header-footer);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -32,7 +32,6 @@
 }
 
 .ordered>button {
-  background-color: var(--color-todo);
   width: 100%;
   border: none;
   padding: 1vh 0;
@@ -40,4 +39,19 @@
   cursor: pointer;
   color: var(--color-white);
   font-size: 1.4rem;
+}
+
+.btn-pending {
+  background-color: var(--color-todo);
+}
+
+.btn-preparing {
+  background-color: var(--color-alert);
+}
+
+.done {
+  background-color: var(--color-conclude);
+  grid-template-columns: 1.5fr 1fr 1fr;
+  margin: 1.5vh 1vw;
+  border-radius: 5px;border-radius: 10px;
 }

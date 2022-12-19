@@ -77,44 +77,12 @@ export const orderToKitchen = () => {
   });
 }
 
-// export const orderId = (orderId) => {
-//   localStorage.setItem('orderId', orderId);
-// }
-
-// const orderId = () => localStorage.getItem('orderId');
-
-export const updateOrderStatus = (orderStatus, orderId) => {
-  console.log(orderId, orderStatus)
-  return fetch('https://lab-api-bq.onrender.com/orders', {
+export const updateOrderStatus = (status, orderId) => {
+  return fetch(`https://lab-api-bq.onrender.com/orders/${orderId}`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json','Authorization': token(), 'orderId': orderId },
+    headers: { 'Content-Type': 'application/json','Authorization': token() },
     body: JSON.stringify({
-      'status': orderStatus
+      status
     }),
   });
 }
-
-
-
-
-// import React, { createContext, useEffect, useState } from "react";
-
-// export const AuthContext = createContext({});
-
-// export const AuthProvider = ({ children }) => {
-//   const [user, setUser] = useState();
-//   useEffect(() => {
-//     const userToken = localStorage.getItem("user_token");
-//     const usersStorage = localStorage.getItem("users_db");
-
-//     if (userToken && usersStorage) {
-//       const hasUser = JSON.parse(usersStorage)?.filter(
-//         (user) => user.email === JSON.parse(userToken).email
-//       );
-
-//       if (hasUser) setUser(hasUser[0]);
-//     }
-//   }, []);
-
-// return <AuthContext.Provider>{children}</AuthContext.Provider>;
-// };

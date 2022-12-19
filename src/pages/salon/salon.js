@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Products } from '../../components/products/products'
 import { Details } from '../../components/details/details'
-import { Header, Footer } from '../../components/header-footer/header-footer'
+import { Header, FooterSalon } from '../../components/header-footer/header-footer'
 import { Check, Itens } from '../../components/check/check'
 import logo from '../../assets/logo.svg';
 import logout from '../../assets/logout.png';
@@ -43,7 +43,6 @@ export const Salon = () => {
     } return;
   });
 
-
   const productsOthers = selectAllProducts.map((p) => {
     if (p.sub_type === 'side' || p.sub_type === 'drinks') {
       return <Products onClick={() => addProductCount(p)} key={p.id} name={p.name} price={p.price} />;
@@ -62,16 +61,14 @@ export const Salon = () => {
         "flavor": product.flavor,
         "complement": product.complement
       }]);
-    } else {
-      setQtd(productsOrder[productId].qtd += 1);
-    }
+    } return setQtd(productsOrder[productId].qtd += 1);
   }
 
   function deleteProductCount(p) {
     const productId = productsOrder.findIndex((e) => e.id === p.id);
     setQtd(productsOrder[productId].qtd -= 1);
     if (p.qtd === 0) {
-      productsOrder.splice(productId, 1);
+      return productsOrder.splice(productId, 1);
     }
   }
 
@@ -118,7 +115,7 @@ export const Salon = () => {
         </details>
         <Details className='details closed' summary='Pedidos finalizados' />
       </main>
-      <Footer href1='salon' text1='Ir para conta' href2='salon' text2='Ir para produtos prontos' />
+      <FooterSalon href1='salon' text1='Ir para conta' href2='salon' text2='Ir para produtos prontos' />
     </section>
   );
 }
