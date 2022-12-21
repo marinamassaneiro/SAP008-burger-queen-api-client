@@ -11,12 +11,12 @@ export function Products({ onClick , product }) {
   )
 }
 
-export function ToDelivery({ client, table, idOrdered, onClick }) {
+export function ToDelivery({ onClick, ordered }) {
   return (
     <div className="order-to-delivery">
-      <p>Cliente: {client}</p>
-      <p>Mesa: {table}</p>
-      <p>Pedido: {idOrdered}</p>
+      <p>Cliente: {ordered.client_name}</p>
+      <p>Mesa: {ordered.table}</p>
+      <p>Pedido: {ordered.id}</p>
       <button onClick={onClick}>ENTREGUE</button>
     </div>
   )

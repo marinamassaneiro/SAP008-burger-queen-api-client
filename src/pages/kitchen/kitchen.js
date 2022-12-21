@@ -34,38 +34,28 @@ export const Kitchen = () => {
       <Header href1='login' logout={logout} title='Cozinha' href2='salon' logo={logo} />
       <section className="container">
         <Details className='details to-delivery' summary='Pedidos pendentes para preparo'
-          product={ allOrdered.map((ordered) => {
-            if (ordered.status === 'pending') {
+          product={ allOrdered
+            .filter(ordered => ordered.status === 'pending')
+            .map((ordered) => {
               return <Ordered key={ordered.id} onClick={() => statusPreparing(ordered)} className={'btn-pending'} txtBtn={'Preparar pedido'}
-              client={ordered.client_name} table={ordered.table} idOrdered={ordered.id}
-                itens={ordered.Products.map((item) => {
-                  if (item.flavor !== null && item.complement === null) {
-                    return <ItensOrdered key={item.id} name={`${item.name} ${item.flavor}`} qtd={item.qtd} />
-                  } else if (item.flavor !== null && item.complement !== null) {
-                    return <ItensOrdered key={item.id} name={`${item.name} ${item.flavor} com ${item.complement}`} qtd={item.qtd} />
-                  } return <ItensOrdered key={item.id} name={item.name} qtd={item.qtd} />
+               product={ordered} itens={ordered.Products.map((product) => {
+                  return <ItensOrdered key={product.id} product={product} />
                 })} />
-            }
           })} />
         <Details className='details preparing' summary='Pedidos em produção'
-          product={ allOrdered.map((ordered) => {
-            if (ordered.status === 'preparing') {
+          product={ allOrdered
+            .filter(ordered => ordered.status === 'preparing')
+            .map((ordered) => {
               return <Ordered key={ordered.id} onClick={() => statusDone(ordered)} className={'btn-preparing'}  txtBtn={'Pedido pronto'}
-              client={ordered.client_name} table={ordered.table} idOrdered={ordered.id}
-                itens={ordered.Products.map((item) => {
-                  if (item.flavor !== null && item.complement === null) {
-                    return <ItensOrdered key={item.id} name={`${item.name} ${item.flavor}`} qtd={item.qtd} />
-                  } else if (item.flavor !== null && item.complement !== null) {
-                    return <ItensOrdered key={item.id} name={`${item.name} ${item.flavor} com ${item.complement}`} qtd={item.qtd} />
-                  } return <ItensOrdered key={item.id} name={item.name} qtd={item.qtd} />
+                product={ordered} itens={ordered.Products.map((product) => {
+                  return <ItensOrdered key={product.id} product={product} />
                 })} />
-            }
           })} />
         <Details className='details closed' summary='Pedidos finalizados'
-          product={ allOrdered.map((ordered, index) => {
-            if (ordered.status === 'finished') {
-              return <Done key={index} client={ordered.client_name} table={ordered.table} idOrdered={ordered.id} />
-            }
+          product={ allOrdered
+            .filter(ordered => ordered.status === 'finished')
+            .map((ordered, index) => {
+              return <Done key={index} product={ordered} />
           })} />
       </section>
       <FooterKitchen href1='salon' text1='Ir para pedidos pendentes' href2='salon' />

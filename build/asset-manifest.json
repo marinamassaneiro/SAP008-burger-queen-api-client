@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.9d115447.css",
-    "main.js": "/static/js/main.90ee1267.js",
+    "main.js": "/static/js/main.a2ab946f.js",
     "static/media/background-james-sutton.jpg": "/static/media/background-james-sutton.d5b39d876274964f9da8.jpg",
     "static/media/logo.svg": "/static/media/logo.766be2e645fc35bd9575e27c035b86e6.svg",
     "index.html": "/index.html",
     "main.9d115447.css.map": "/static/css/main.9d115447.css.map",
-    "main.90ee1267.js.map": "/static/js/main.90ee1267.js.map"
+    "main.a2ab946f.js.map": "/static/js/main.a2ab946f.js.map"
   },
   "entrypoints": [
     "static/css/main.9d115447.css",
-    "static/js/main.90ee1267.js"
+    "static/js/main.a2ab946f.js"
   ]
 }
