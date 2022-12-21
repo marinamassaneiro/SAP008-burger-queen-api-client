@@ -36,10 +36,10 @@ export const Register = () => {
       <div className="div-auth">
         <img className="logo" src={logo} alt="logo"></img>
         <form>
-          <Inputs type='text' onChange={(e) => setName(e.target.value)} placeholder='NOME' class /><br />
-          <Inputs type='email' onChange={(e) => setEmail(e.target.value)} placeholder='E-MAIL' class /><br />
-          <Inputs type='password' onChange={(e) => setPassword(e.target.value)} placeholder='SENHA' /><br />
-          <Inputs type='password' onChange={(e) => setConfirmPassword(e.target.value)} placeholder='CONFIRMAR SENHA' /><br />
+          <Inputs type='text' onChange={(e) => setName(e.target.value)} placeholder='NOME' className='input-auth' /><br />
+          <Inputs type='email' onChange={(e) => setEmail(e.target.value)} placeholder='E-MAIL' className='input-auth' /><br />
+          <Inputs type='password' onChange={(e) => setPassword(e.target.value)} placeholder='SENHA' className='input-auth' /><br />
+          <Inputs type='password' onChange={(e) => setConfirmPassword(e.target.value)} placeholder='CONFIRMAR SENHA' className='input-auth'/><br />
           <select className="select-register" onChange={(e) => setRole(e.target.value)}  >
             <OptionSelect value='Sua função' />
             <OptionSelect value='Atendente' />

@@ -12,16 +12,21 @@
   cursor: pointer;
 }
 
-.to-delivery {
+.details-to-delivery, .details-to-do {
   background-color: var(--color-alert);
 }
 
-.new-ordered, .preparing {
+.details-done {
+  background-color: rgba(188,108,37,0.6);
+  margin: 5vh 10vw;
+}
+
+.details-new-ordered, .details-preparing {
   background-color: var(--color-todo);
   margin: 5vh 10vw;
 }
 
-.new-ordered > .detailsMenu {
+.details-new-ordered > .detailsMenu {
   background-color: rgba(247, 246, 246, 0.1);
   margin: 3vh 0;
   border: 2px solid var(--color-white);
@@ -29,12 +34,12 @@
   border-radius: 10px;
 }
 
-.new-ordered > .detailsMenu > summary {
+.details-new-ordered > .detailsMenu > summary {
   margin: 2vh 0;
   cursor: pointer;
 }
 
-.closed {
+.details-closed {
   background-color: var(--color-conclude);
   color: var(--color-details);
 }
