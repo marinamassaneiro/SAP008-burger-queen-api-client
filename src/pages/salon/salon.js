@@ -40,11 +40,11 @@ export const Salon = () => {
     // .then(() => window.location.reload()); 
   }
 
-  const productsBreakfast = selectAllProducts.map((product) => {
-    if (product.sub_type === 'breakfast') {
-      return <Products onClick={() => addProductCount(product)} key={product.id} product={product} />;
-    } return;
-  });
+    const productsBreakfast = selectAllProducts
+    .filter(p => p.sub_type === 'breakfast')
+    .map((product) => (
+      <Products onClick={() => addProductCount(product)} key={product.id}  product={product} />
+    ));
 
   const productsHamburguer = selectAllProducts
     .filter((p) => p.sub_type === 'hamburguer')
@@ -52,11 +52,11 @@ export const Salon = () => {
       <Products onClick={() => addProductCount(product)} key={product.id} product={product} />
     ));
 
-  const productsOthers = selectAllProducts.map((p) => {
-    if (p.sub_type === 'side' || p.sub_type === 'drinks') {
-      return <Products onClick={() => addProductCount(p)} key={p.id} name={p.name} price={p.price} />;
-    }
-  });
+  const productsOthers = selectAllProducts
+    .filter(p => p.sub_type === 'side' || p.sub_type === 'drinks')
+    .map((product) => (
+       <Products onClick={() => addProductCount(product)} key={product.id}  product={product} />
+    ));
 
   function addProductCount(product) {
     const productId = productsOrder.findIndex((e) => e.id === product.id);
@@ -85,7 +85,7 @@ export const Salon = () => {
     createOrder(client, table, productsOrder)
       .then((response) => response.json())
       .then(() => {
-        setClient(''); //não funciona nao sei pq
+        setClient(''); 
         setTable('');
         setProductsOrder([]);    
       })
@@ -99,8 +99,7 @@ export const Salon = () => {
         <Details className='details to-delivery' summary='Pedidos prontos para entrega'
         product={ allOrdered.map((ordered, index) => {
           if (ordered.status === 'done') {
-            return <ToDelivery key={index} client={ordered.client_name} table={ordered.table} 
-            idOrdered={ordered.id} onClick={() => statusFinished(ordered)}/>
+            return <ToDelivery key={index} ordered={ordered} onClick={() => statusFinished(ordered)}/>
           }
         })} />
         <details className="details new-ordered">
@@ -111,8 +110,8 @@ export const Salon = () => {
           <Check itens={productsOrder.map((product) => {
              return <Itens onClick1={() => deleteProductCount(product)} onClick2={() => addProductCount(product)} key={product.id} 
             product={product} />
-          })} client={<input type="text" className="input-order-client" onChange={(e) => setClient(e.target.value)} />}
-            table={<input type="number" className="input-order-table" onChange={(e) => setTable(e.target.value)} />} 
+          })} client={<input type="text" className="input-order-client" value={client} onChange={(e) => setClient(e.target.value)} />}
+            table={<input type="number" className="input-order-table" value={table} onChange={(e) => setTable(e.target.value)} />} 
             onClick={makeOrder} counter={productsOrder.reduce((result, product) => result + (product.price * product.qtd), 0)}
           >
           </Check>
@@ -120,7 +119,7 @@ export const Salon = () => {
         <Details className='details closed' summary='Pedidos finalizados'
           product={ allOrdered.map((ordered, index) => {
             if (ordered.status === 'finished') {
-              return <Done key={index} client={ordered.client_name} table={ordered.table} idOrdered={ordered.id} />
+              return <Done key={index} ordered={ordered} />
             }
           })} />
       </main>
@@ -128,6 +127,3 @@ export const Salon = () => {
     </section>
   );
 }
-
-
-//  <Details className='details new-ordered' text1='Novos pedidos' element1={breakfastMenu} element2={hamburguerMenu} element3={othersMenu} /> 

@@ -1,21 +1,22 @@
 import './order2.css';
+import { getProductName } from '../../helpers/getProductName';
 
-export function ItensOrdered({ name, qtd }) {
+export function ItensOrdered({ product }) {
   return (
     <div className="itens-ordered">
-      <p> {name} </p>
-      <p> x{qtd} </p>
+      <p> {getProductName(product)} </p>
+      <p> x{product.qtd} </p>
     </div>
   )
 }
 
-export function Ordered({ client, table, idOrdered, onClick, itens, className, txtBtn }) {
+export function Ordered({ onClick, itens, className, txtBtn, product }) {
   return (
     <div className="ordered">
       <div className="header-ordered">
-        <p>Cliente: {client}</p>
-        <p>Mesa: {table}</p>
-        <p>Pedido: {idOrdered}</p>
+        <p>Cliente: {product.client_name}</p>
+        <p>Mesa: {product.table}</p>
+        <p>Pedido: {product.id}</p>
       </div>
       {itens}
       <button className={className} onClick={onClick} >{txtBtn}</button>
@@ -23,26 +24,12 @@ export function Ordered({ client, table, idOrdered, onClick, itens, className, t
   )
 }
 
-export function Done({ client, table, idOrdered }) {
+export function Done({ ordered }) {
   return (
     <div className="done">
-      <p>Cliente: {client}</p>
-      <p>Mesa: {table}</p>
-      <p>Pedido: {idOrdered}</p>
+      <p>Cliente: {ordered.client_name}</p>
+      <p>Mesa: {ordered.table}</p>
+      <p>Pedido: {ordered.id}</p>
     </div>
   )
 }
-
-
-// 0: Products: Array(1)
-// 0: {id: 22, name: 'Hambúrguer duplo', flavor: 'vegetariano', complement: 'queijo', qtd: 2}
-// length: 1
-// [[Prototype]]: Array(0)
-// client_name: "Marina"
-// createdAt: "2022-12-12T17:13:33.024Z"
-// id: 12
-// processedAt: null
-// status: "pending"
-// table: 13
-// updatedAt: "2022-12-12T17:13:33.024Z"
-// user_id: 8
