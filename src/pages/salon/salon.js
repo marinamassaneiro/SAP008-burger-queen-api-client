@@ -42,21 +42,15 @@ export const Salon = () => {
 
   const productsBreakfast = selectAllProducts.map((product) => {
     if (product.sub_type === 'breakfast') {
-      return <Products onClick={() => addProductCount(product)} key={product.id} name={product.name} price={product.price} />;
+      return <Products onClick={() => addProductCount(product)} key={product.id} product={product} />;
     } return;
   });
 
-  const productsHamburguer = selectAllProducts.map((p) => {
-    if (p.sub_type === 'hamburguer') {
-      if (p.flavor === null && p.complement === null) {
-        return <Products onClick={() => addProductCount(p)} key={p.id} name={p.name} price={p.price} />;
-      } else if (p.flavor !== null && p.complement === null) {
-        return <Products onClick={() => addProductCount(p)} key={p.id} name={`${p.name} ${p.flavor}`} price={p.price} />;
-      } else if (p.flavor !== null && p.complement !== null) {
-        return <Products onClick={() => addProductCount(p)} key={p.id} name={`${p.name} ${p.flavor} com ${p.complement}`} price={p.price} />;
-      }
-    } return;
-  });
+  const productsHamburguer = selectAllProducts
+    .filter((p) => p.sub_type === 'hamburguer')
+    .map((product) => (
+      <Products onClick={() => addProductCount(product)} key={product.id} product={product} />
+    ));
 
   const productsOthers = selectAllProducts.map((p) => {
     if (p.sub_type === 'side' || p.sub_type === 'drinks') {
@@ -115,19 +109,8 @@ export const Salon = () => {
           <Details className='detailsMenu hamburguer-menu' summary='Hamburgueres' product={productsHamburguer} />
           <Details className='detailsMenu others-menu' summary='Acompanhamentos e Bebidas' product={productsOthers} />
           <Check itens={productsOrder.map((product) => {
-            if (product.sub_type === 'hamburguer') {
-              if (product.flavor === null && product.complement === null) {
-                return <Itens onClick1={() => deleteProductCount(product)} onClick2={() => addProductCount(product)} key={product.id} 
-                counter={product.qtd} name={product.name} price={product.price} totalPrice={product.price * product.qtd} />;
-              } else if (product.flavor !== null && product.complement === null) {
-                return <Itens onClick1={() => deleteProductCount(product)} onClick2={() => addProductCount(product)} key={product.id} 
-                counter={product.qtd} name={`${product.name} ${product.flavor}`} price={product.price} totalPrice={product.price * product.qtd} />;
-              } else if (product.flavor !== null && product.complement !== null) {
-                return <Itens onClick1={() =>deleteProductCount(product)} onClick2={() => addProductCount(product)} key={product.id} 
-                counter={product.qtd} name={`${product.name} ${product.flavor} com ${product.complement}`} price={product.price} totalPrice={product.price * product.qtd} />;
-              }
-            } return <Itens onClick1={() => deleteProductCount(product)} onClick2={() => addProductCount(product)} key={product.id} 
-            name={product.name} counter={product.qtd} price={product.price} totalPrice={product.price * product.qtd} />
+             return <Itens onClick1={() => deleteProductCount(product)} onClick2={() => addProductCount(product)} key={product.id} 
+            product={product} />
           })} client={<input type="text" className="input-order-client" onChange={(e) => setClient(e.target.value)} />}
             table={<input type="number" className="input-order-table" onChange={(e) => setTable(e.target.value)} />} 
             onClick={makeOrder} counter={productsOrder.reduce((result, product) => result + (product.price * product.qtd), 0)}
@@ -147,5 +130,4 @@ export const Salon = () => {
 }
 
 
-{/* <Details className='details new-ordered' text1='Novos pedidos' element1={breakfastMenu} element2={hamburguerMenu} element3={othersMenu} /> */ }
-// itens={selectAllProducts.map((p) => orderList(p))}
+//  <Details className='details new-ordered' text1='Novos pedidos' element1={breakfastMenu} element2={hamburguerMenu} element3={othersMenu} /> 

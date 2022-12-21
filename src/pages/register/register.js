@@ -4,7 +4,6 @@ import logo from '../../assets/logo.svg';
 import '../login/login.css'
 import '../../style.css'
 import { createUser } from '../../contexts/api'
-import { errorMessage } from "../../errors/error";
 import { useNavigate, Link } from 'react-router-dom';
 
 export const Register = () => {
@@ -21,9 +20,9 @@ export const Register = () => {
     createUser(name, email, password, role)
       .then((response) => response.json())
       .then((data) => {
-        if (data.code === 400) {
+        if (data.code !== 200) {
           return setError(data.message)
-        } return data 
+        } else {return data} 
       })
       .then((data) => {
         if (!data) return;

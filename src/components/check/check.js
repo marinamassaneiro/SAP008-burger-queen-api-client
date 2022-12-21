@@ -1,12 +1,13 @@
 import './check.css';
+import { getProductName } from '../../helpers/getProductName';
 
-export function Itens({ name, counter, price, onClick1, onClick2, totalPrice }) {
+export function Itens({ onClickDelete, onClickAdd, product }) {
   return (
     <div className="itens-count">
-      <p> {name} </p>
-      <p> R$ {price} </p>
-      <div className='counter'><button onClick={onClick1} >-</button>{counter}<button onClick={onClick2} >+</button></div>
-      <p>R$ {totalPrice}</p>
+      <p> {getProductName(product)} </p>
+      <p> R$ {product.price} </p>
+      <div className='counter'><button onClick={onClickDelete} >-</button>{product.qtd}<button onClick={onClickAdd} >+</button></div>
+      <p>R$ {product.price * product.qtd}</p>
     </div>
   )
 }

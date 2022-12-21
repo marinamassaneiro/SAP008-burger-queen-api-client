@@ -1,10 +1,11 @@
 import './products.css'
+import { getProductName } from '../../helpers/getProductName'
 
-export function Products({ name, price, onClick }) {
+export function Products({ onClick , product }) {
   return (
     <div className="products-list">
-      <p> {name} </p>
-      <p> R$ {price} </p>
+      <p> {getProductName(product)} </p>
+      <p> R$ {product.price} </p>
       <button onClick={onClick}>+</button>
     </div>
   )
