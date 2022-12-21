@@ -24,12 +24,22 @@ export function Ordered({ onClick, itens, className, txtBtn, product }) {
   )
 }
 
-export function Done({ ordered }) {
+export function Done({ product }) {
   return (
     <div className="done">
-      <p>Cliente: {ordered.client_name}</p>
-      <p>Mesa: {ordered.table}</p>
-      <p>Pedido: {ordered.id}</p>
+      <p>Cliente: {product.client_name}</p>
+      <p>Mesa: {product.table}</p>
+      <p>Pedido: {product.id}</p>
+    </div>
+  )
+}
+
+export function Closed({ product }) {
+  return (
+    <div className="closed">
+      <p>Cliente: {product.client_name}</p>
+      <p>Mesa: {product.table}</p>
+      <p>Pedido: {product.id}</p>
     </div>
   )
 }

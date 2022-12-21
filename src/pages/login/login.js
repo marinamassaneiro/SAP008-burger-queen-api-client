@@ -39,9 +39,9 @@ export const Login = () => {
           <img className='logo' src={logo} alt='logo'></img>
         </figure>
         <form>
-          <Inputs type='email' onChange={(e) => setEmail(e.target.value)} placeholder='E-MAIL' class /><br />
-          <Inputs type='password' onChange={(e) => setPassword(e.target.value)} placeholder='SENHA' /><br />
-          <Inputs type='submit' value='ENTRAR' onClick={loginUser} />
+          <Inputs type='email' onChange={(e) => setEmail(e.target.value)} placeholder='E-MAIL' className='input-auth' /><br />
+          <Inputs type='password' onChange={(e) => setPassword(e.target.value)} placeholder='SENHA' className='input-auth' /><br />
+          <Inputs type='submit' value='ENTRAR' onClick={loginUser} className='input-auth' />
           <p className="error-msg">{error}</p>
         </form>
         <footer>

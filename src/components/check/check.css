@@ -4,7 +4,7 @@
   border-radius: 10px;
 }
 
-.check > .header-count {
+.header-count {
   background-color: var(--color-header-footer);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -19,26 +19,26 @@
   text-align: end;
 }
 
-.check > .header-count > p > .input-order-client {
-  background-color: #BC6C25;
-  border: none;
+.input-check {
+  background-color: var(--color-header-footer);
+  border: 1px solid var(--color-white);
+  margin: 0 1vw;
   padding: 0 1vw;
-  height: 3vh;
+  height: 4.5vh;
+  outline: 0;
+  color: var(--color-white);
+  font-size: 1.4rem;
+}
+
+.input-check-client {
   width: 16vw;
-  color: var(--color-white);
-  font-size: 1.4rem;
 }
 
-.check > .header-count > p > .input-order-table {
-  background-color: #BC6C25;
-  border: none;
-  height: 3vh;
+.input-check-table {
   width: 5vw;
-  color: var(--color-white);
-  font-size: 1.4rem;
 }
 
-.check > .itens-count {
+.itens-count {
   background-color: var(--color-white);
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr;
@@ -50,14 +50,14 @@
   font-size: 1.5rem;
 }
 
-.check > .itens-count > .counter {
+.counter {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   margin: 0 3vw;
 }
 
-.check > .itens-count > .counter > button {
+.counter > button {
   background-color: var(--color-white);
   height: 45px;
   width: 45px;

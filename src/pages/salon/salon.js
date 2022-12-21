@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Products, ToDelivery } from '../../components/products/products'
-import { Details } from '../../components/details/details'
+import { ToDelivery } from '../../components/products/products'
+import { Details, DetailsByType } from '../../components/details/details'
 import { Header, FooterSalon } from '../../components/header-footer/header-footer'
 import { Check, Itens } from '../../components/check/check'
 import logo from '../../assets/logo.svg';
 import logout from '../../assets/logout.png';
 import '../../style.css'
 import { allProducts, name, createOrder, orderToKitchen, updateOrderStatus } from '../../contexts/api';
-import { Done } from "../../components/ordered/ordered";
+import { Closed } from "../../components/ordered/ordered";
+import { Inputs } from "../../components/inputs/inputs";
 
 
 export const Salon = () => {
@@ -35,28 +36,14 @@ export const Salon = () => {
       });
   }, []);
 
-  function statusFinished(ordered) { 
+  function statusFinished(ordered) {
     updateOrderStatus('finished', ordered.id)
-    // .then(() => window.location.reload()); 
+      .then(() => window.location.reload());
   }
 
-    const productsBreakfast = selectAllProducts
-    .filter(p => p.sub_type === 'breakfast')
-    .map((product) => (
-      <Products onClick={() => addProductCount(product)} key={product.id}  product={product} />
-    ));
-
-  const productsHamburguer = selectAllProducts
-    .filter((p) => p.sub_type === 'hamburguer')
-    .map((product) => (
-      <Products onClick={() => addProductCount(product)} key={product.id} product={product} />
-    ));
-
-  const productsOthers = selectAllProducts
-    .filter(p => p.sub_type === 'side' || p.sub_type === 'drinks')
-    .map((product) => (
-       <Products onClick={() => addProductCount(product)} key={product.id}  product={product} />
-    ));
+  const breakfastFilter = product => product.sub_type === 'breakfast';
+  const hamburguerFilter = product => product.sub_type === 'hamburguer';
+  const othersFilter = product => product.sub_type === 'side' || product.sub_type === 'drinks';
 
   function addProductCount(product) {
     const productId = productsOrder.findIndex((e) => e.id === product.id);
@@ -85,9 +72,9 @@ export const Salon = () => {
     createOrder(client, table, productsOrder)
       .then((response) => response.json())
       .then(() => {
-        setClient(''); 
+        setClient('');
         setTable('');
-        setProductsOrder([]);    
+        setProductsOrder([]);
       })
       .catch((erro) => console.log(erro));
   }
@@ -96,32 +83,30 @@ export const Salon = () => {
     <section>
       <Header href1='login' logout={logout} title={`Atendente: ${name()}`} href2='salon' logo={logo} />
       <main className="container">
-        <Details className='details to-delivery' summary='Pedidos prontos para entrega'
-        product={ allOrdered.map((ordered, index) => {
-          if (ordered.status === 'done') {
-            return <ToDelivery key={index} ordered={ordered} onClick={() => statusFinished(ordered)}/>
-          }
-        })} />
-        <details className="details new-ordered">
+        <Details className='details details-to-delivery' summary='Pedidos prontos para entrega'
+          product={allOrdered
+            .filter((order) => order.status === 'done')
+            .map((ordered, index) => (
+              <ToDelivery key={index} ordered={ordered} onClick={() => statusFinished(ordered)} />
+            ))} />
+        <details className="details details-new-ordered">
           <summary>Novos pedidos</summary>
-          <Details className='detailsMenu breakfast-menu' summary='Café da Manhã' product={productsBreakfast} />
-          <Details className='detailsMenu hamburguer-menu' summary='Hamburgueres' product={productsHamburguer} />
-          <Details className='detailsMenu others-menu' summary='Acompanhamentos e Bebidas' product={productsOthers} />
-          <Check itens={productsOrder.map((product) => {
-             return <Itens onClick1={() => deleteProductCount(product)} onClick2={() => addProductCount(product)} key={product.id} 
-            product={product} />
-          })} client={<input type="text" className="input-order-client" value={client} onChange={(e) => setClient(e.target.value)} />}
-            table={<input type="number" className="input-order-table" value={table} onChange={(e) => setTable(e.target.value)} />} 
-            onClick={makeOrder} counter={productsOrder.reduce((result, product) => result + (product.price * product.qtd), 0)}
-          >
+          <DetailsByType addProductCount={addProductCount} className='detailsMenu breakfast-menu' summary='Café da Manhã' productList={selectAllProducts} filterFunc={breakfastFilter} />
+          <DetailsByType addProductCount={addProductCount} className='detailsMenu hamburguer-menu' summary='Hamburgueres' productList={selectAllProducts} filterFunc={hamburguerFilter} />
+          <DetailsByType addProductCount={addProductCount} className='detailsMenu others-menu' summary='Acompanhamentos e Bebidas' productList={selectAllProducts} filterFunc={othersFilter} />
+          <Check itens={productsOrder.map((product) => (
+            <Itens onClickDelete={() => deleteProductCount(product)} onClickAdd={() => addProductCount(product)} key={product.id}
+              product={product} />))} client={<Inputs type='text' onChange={(e) => setClient(e.target.value)} className='input-check input-check-client' />} 
+              table={<Inputs type='number' onChange={(e) => setTable(e.target.value)} className='input-check input-check-table' />}
+            onClick={makeOrder} counter={productsOrder.reduce((result, product) => result + (product.price * product.qtd), 0)} >
           </Check>
         </details>
-        <Details className='details closed' summary='Pedidos finalizados'
-          product={ allOrdered.map((ordered, index) => {
-            if (ordered.status === 'finished') {
-              return <Done key={index} ordered={ordered} />
-            }
-          })} />
+        <Details className='details details-closed' summary='Pedidos finalizados'
+          product={allOrdered
+            .filter((order) => order.status === 'finished')
+            .map((ordered, index) => (
+              <Closed key={index} ordered={ordered} />
+            ))} />
       </main>
       <FooterSalon href1='salon' text1='Ir para conta' href2='salon' text2='Ir para produtos prontos' />
     </section>
