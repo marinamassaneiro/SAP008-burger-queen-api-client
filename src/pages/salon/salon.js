@@ -105,7 +105,7 @@ export const Salon = () => {
           product={allOrdered
             .filter((order) => order.status === 'finished')
             .map((ordered, index) => (
-              <Closed key={index} ordered={ordered} />
+              <Closed key={index} product={ordered} />
             ))} />
       </main>
       <FooterSalon href1='salon' text1='Ir para conta' href2='salon' text2='Ir para produtos prontos' />
